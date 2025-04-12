@@ -6,12 +6,12 @@ PORT = 8000
 
 """ Class TestMe """
 class TestMe():
-    """ Method take_five """
     def take_five(self):
+        """ Method take_five() """
         return 4
 
-    """ Method port """
     def port(self):
+        """ Method port() """
         return PORT
 
 
