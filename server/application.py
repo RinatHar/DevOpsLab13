@@ -1,13 +1,17 @@
+""" Module http.server and socketserver"""
 import http.server
 import socketserver
 
 PORT = 8000
 
-
 class TestMe():
+    """ Class TestMe() """
     def take_five(self):
-        return 4
+        """ Method take_five() """
+        return 5
+
     def port(self):
+        """ Method port() """
         return PORT
 
 
