@@ -8,7 +8,7 @@ class TestMe():
     """ Class TestMe() """
     def take_five(self):
         """ Method take_five() """
-        return 4
+        return 5
 
     def port(self):
         """ Method port() """
