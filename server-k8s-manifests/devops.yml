@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops
+  labels:
+    app: devops
+    release-date: RELEASE-DATE
+  namespace: devops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops
+  template:
+    metadata:
+      labels:
+        app: devops
+        svc: frontend
+        release-date: RELEASE-DATE
+    spec:
+      containers:
+      - name: devops-server
+        image: rinat1808/devops:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+  labels:
+    app: devops
+  namespace: devops
+spec:
+  type: LoadBalancer
+  selector:
+    app: devops
+    svc: frontend
+  ports:
+  - port: 12345
+    targetPort: 8000
+  externalIPs:
+  - 10.0.2.15
