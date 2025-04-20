@@ -8,7 +8,7 @@ WORKDIR /usr/local/http-server
 
 ADD ./application.py /usr/local/http-server/application.py
 
-RUN chown -R ruuner:runner /usr/local/http-server/
+RUN chown -R runner:runner /usr/local/http-server/
 
 EXPOSE 8000
 USER runner 
